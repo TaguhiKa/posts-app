@@ -7,7 +7,6 @@ CRUD application using React and https://jsonplaceholder.typicode.com/ api
 * Delete a post
 * Update a post
 
-Future self-tasks
-* Creative design
+
 ![Posts](./Posts.png?raw=true "Posts")
 
