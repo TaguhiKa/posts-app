@@ -1,0 +1,11 @@
+h1 {
+    padding: 10px;
+    color: #780116;
+    font-size: 50px;
+}
+
+.add-btn {
+    color: #780116;
+   font-size: 50px;
+   cursor: pointer;
+}
