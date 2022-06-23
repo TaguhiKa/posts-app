@@ -2,7 +2,7 @@ import './Title.css';
 
 const Title = ({title}) => {
     return ( 
-        <span className="box-title">
+        <span className="card-title">
             {title}
         </span>
      );

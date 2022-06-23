@@ -4,9 +4,9 @@ import Body from "../Body/Body";
 import Button from "../Button/Button";
 import { faTrashCan, faPencil, faCheck } from "@fortawesome/free-solid-svg-icons";
 
-import "./Box.css";
+import "./Card.css";
 
-const Box = ({
+const Card = ({
     onDelete = () => {},
     onEdit = () => {} ,
     id = 0,
@@ -25,24 +25,24 @@ const Box = ({
   };
 
   return (
-    <div className="box-wrapper">
+    <>
        { isEdit ? (
-            <form onSubmit={handleOnEditSubmit} key={id} className='box'>
-              <input className="input-title" name="title" defaultValue={title} />
-              <textarea name="body" defaultValue={body} />
+            <form onSubmit={handleOnEditSubmit} key={id} className='card'>
+              <div className="card-title" name="title" defaultValue={title} />
+              <div className="card-body" name="card-body" defaultValue={body} />
               <button className="btn" onSubmit={ handleOnEditSubmit}> 
               <Button onClick={handleOnEditSubmit} id={id} icon={faCheck} /></button>
             </form>
           ) : (
-            <div className="box" >
+            <div className="card" >
               <Title title={title} />
               <Body body={body} />
               <Button onClick={onDelete} id={id} icon={faTrashCan} />
               <Button onClick={handleEdit} id={id} icon={faPencil} />
             </div>
           ) }
-    </div>
+    </>
   );
 };
 
-export default Box;
+export default Card;
