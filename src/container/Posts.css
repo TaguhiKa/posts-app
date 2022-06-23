@@ -1,11 +1,39 @@
-h1 {
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo {
     padding: 10px;
-    color: #780116;
-    font-size: 50px;
+    color: #153243;
+    font-size: 96px;
+    font-family: 'Lovers Quarrel', cursive;
+    letter-spacing: 1px;
+    font-weight: 400;
 }
 
+.signature{
+    color: #caaaac;
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-family: 'Antic Didone', serif;
+}
+
+.write-post {
+    font-style: italic;
+    margin-top: 10px;
+    color: #153243;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-family: 'Antic Didone', serif;
+}
 .add-btn {
     color: #780116;
-   font-size: 50px;
-   cursor: pointer;
+    font-size: 50px;
+    cursor: pointer;
 }

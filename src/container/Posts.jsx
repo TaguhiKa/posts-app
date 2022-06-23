@@ -1,4 +1,4 @@
-import Box from "../components/Box/Box";
+import Card from "../components/Cards/Card";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
@@ -31,7 +31,9 @@ const Posts = () => {
       });
   };
   useEffect(() => {
-    fetchData();
+    if (posts.length === 0) {
+      fetchData();
+    }
   }, []);
 
   const deletePosts = (id) => {
@@ -70,11 +72,13 @@ const Posts = () => {
 
   return (
     posts && (
-      <div className="global-section">
-        <h1>Posts</h1>
+      <div className="header">
+        <div className="logo">sincerely, yours</div>
+        <div className="signature">Taguhi Karakashyan</div>
+        <div className="write-post">Write a new post</div>
         {posts.map((item) => {
           return <div key={item.id}>
-            <Box 
+            <Card
               onDelete={deletePosts} 
               onEdit={updatePosts}
               title={item.title}

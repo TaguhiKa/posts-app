@@ -1,7 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
-
 const Button = ({onClick, id, icon}) => {
     const handleDelete= (id) => {
         onClick(id);
