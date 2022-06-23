@@ -5,7 +5,7 @@ const Button = ({onClick, id, icon}) => {
         onClick(id);
     }
     return ( 
-        <span className="btn" onClick={()=>handleDelete(id)}>< FontAwesomeIcon icon={icon} /></span>
+        <div className="btn" onClick={()=>handleDelete(id)}>Edit Delete</div>
      );
 }
 

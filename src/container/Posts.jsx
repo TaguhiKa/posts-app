@@ -1,7 +1,9 @@
 import Card from "../components/Cards/Card";
+import Header from "../components/Header/Header";
+
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { faCirclePlus, faEdit } from "@fortawesome/free-solid-svg-icons";
 import "./Posts.css";
 
 const getIntialPosts = () => {
@@ -72,26 +74,24 @@ const Posts = () => {
 
   return (
     posts && (
-      <div className="header">
-        <div className="logo">sincerely, yours</div>
-        <div className="signature">Taguhi Karakashyan</div>
-        <div className="write-post">Write a new post</div>
-        {posts.map((item) => {
-          return <div key={item.id}>
-            <Card
-              onDelete={deletePosts} 
-              onEdit={updatePosts}
-              title={item.title}
-              body={item.body}
-              id={item.id}
-            />
+      <>
+      <Header />
+      <Card />
+      </>
+      //   {posts.map((item) => {
+      //     return <div key={item.id}>
+      //       <Card
+      //         onDelete={deletePosts} 
+      //         onEdit={updatePosts}
+      //         title={item.title}
+      //         body={item.body}
+      //         id={item.id}
+      //       />
             
-          </div>;
-        })}
-        <span className="add-btn" onClick={addPost}>
-              <FontAwesomeIcon icon={faCirclePlus} />
-            </span>
-      </div>
+      //     </div>;
+      //   })}
+      // </div>
+    
     )
   );
 };

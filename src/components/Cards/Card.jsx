@@ -28,17 +28,20 @@ const Card = ({
     <>
        { isEdit ? (
             <form onSubmit={handleOnEditSubmit} key={id} className='card'>
-              <div className="card-title" name="title" defaultValue={title} />
-              <div className="card-body" name="card-body" defaultValue={body} />
-              <button className="btn" onSubmit={ handleOnEditSubmit}> 
-              <Button onClick={handleOnEditSubmit} id={id} icon={faCheck} /></button>
+              
+              <input className="card-title" name="title" defaultValue={title} />
+           
+              <textarea className="card-body" name="card-body" defaultValue={body} />
+            
+              <button className="done-btn" onSubmit={ handleOnEditSubmit}> Done
+              </button>
             </form>
           ) : (
             <div className="card" >
               <Title title={title} />
               <Body body={body} />
-              <Button onClick={onDelete} id={id} icon={faTrashCan} />
-              <Button onClick={handleEdit} id={id} icon={faPencil} />
+              
+
             </div>
           ) }
     </>
