@@ -1,4 +1,4 @@
-# CRUD application which edits user records in React
+# CRUD app which edits user records in React
 
 A simple CRUD application using React and JSONPlaceholder API where you can:
 
