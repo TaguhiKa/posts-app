@@ -2,7 +2,7 @@
 
 A simple CRUD application using React and [JSONPlaceholder API](https://jsonplaceholder.typicode.com/) where you can:
 
-* Retrieve and display the list of posts
+* Display all the posts
 * Create a new post
 * Delete a post
 * Update a post
