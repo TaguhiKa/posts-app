@@ -1,7 +1,7 @@
 import Card from "../components/Cards/Card";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import "./Posts.css";
 
 const getIntialPosts = () => {
@@ -31,7 +31,7 @@ const Posts = () => {
       });
   };
   useEffect(() => {
-    if (posts.length === 0) {
+    if (!getIntialPosts().length) {
       fetchData();
     }
   }, []);
@@ -44,23 +44,21 @@ const Posts = () => {
     ]);
   };
 
-  const addPost = () => {
-    const newPost = {
-      id: posts.length + 1,
-      userId: Math.floor(Math.random() * 10) + 1,
-      title: "",
-      body: "",
-    };
-    const unshitPost = posts.unshift(newPost)
-    setPosts([...posts, unshitPost]);
+const addPost = () => {
+  const newPost = {
+    id: posts.length + 1,
+    userId: Math.floor(Math.random() * 10) + 1,
+    title: "",
+    body: "",
   };
+  const newPosts = [newPost].concat(posts)
+  setPosts(newPosts);
+}
 
   const updatePosts = (id, updatedTitle, updatedBody) => {
-   
     setPosts(
       posts.map(post => {
-        console.log(id);
-        console.log(post);
+
         if (post.id === id) {
           post.title = updatedTitle
           post.body = updatedBody
@@ -71,13 +69,18 @@ const Posts = () => {
   }
 
   return (
-    posts && (
+ 
       <div className="header">
         <div className="logo">sincerely, yours</div>
         <div className="signature">Taguhi Karakashyan</div>
-        <div className="write-post">Write a new post</div>
-        {posts.map((item) => {
-          return <div key={item.id}>
+        <div className="write-post">Write a new post
+        <span className="add-btn" onClick={addPost} role="button">
+          <FontAwesomeIcon icon={faEdit} />
+        </span>
+        </div>
+        <div className="posts-container">
+        {posts && posts.map((item, index) => {
+          return <div key={index}>
             <Card
               onDelete={deletePosts} 
               onEdit={updatePosts}
@@ -88,12 +91,9 @@ const Posts = () => {
             
           </div>;
         })}
-        <span className="add-btn" onClick={addPost}>
-              <FontAwesomeIcon icon={faCirclePlus} />
-            </span>
+        </div>
       </div>
     )
-  );
 };
 
 export default Posts;
