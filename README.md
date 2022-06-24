@@ -2,7 +2,7 @@ Check it here: [My Blog]( https://taguhika.github.io/posts-app/)
 
 # Blog
 
-A simple CRUD application using React and [JSONPlaceholder API](https://jsonplaceholder.typicode.com/) where you can:
+A responsive simple CRUD application using React and [JSONPlaceholder API](https://jsonplaceholder.typicode.com/) where you can:
 
 * Display all the posts
 * Create a new post
@@ -30,7 +30,9 @@ $ npm start
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
-
-
+### Future tasks
+* Add pages
+* Button animations
+* Add pictures to cards
 
 
