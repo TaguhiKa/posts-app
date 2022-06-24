@@ -30,7 +30,7 @@ $ npm start
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
-### Future tasks
+## Future tasks
 * Add pages
 * Button animations
 * Add pictures to cards
