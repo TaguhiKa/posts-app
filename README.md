@@ -1,5 +1,8 @@
 # posts-app
 
+
+[My Blog]( https://taguhika.github.io/posts-app/)
+
 CRUD application using React and https://jsonplaceholder.typicode.com/ api
 
 * Display all the posts
