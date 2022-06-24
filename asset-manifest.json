@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TaguhiKa/posts-app.git/static/css/main.db901dad.css",
+    "main.js": "/TaguhiKa/posts-app.git/static/js/main.7ca9afbd.js",
+    "index.html": "/TaguhiKa/posts-app.git/index.html",
+    "main.db901dad.css.map": "/TaguhiKa/posts-app.git/static/css/main.db901dad.css.map",
+    "main.7ca9afbd.js.map": "/TaguhiKa/posts-app.git/static/js/main.7ca9afbd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.db901dad.css",
+    "static/js/main.7ca9afbd.js"
+  ]
+}
