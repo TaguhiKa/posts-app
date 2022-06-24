@@ -1,4 +1,4 @@
-[My Blog]( https://taguhika.github.io/posts-app/)
+Check it here: [My Blog]( https://taguhika.github.io/posts-app/)
 
 # CRUD app which edits user records in React
 
