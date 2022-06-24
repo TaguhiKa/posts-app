@@ -1,3 +1,5 @@
+[My Blog]( https://taguhika.github.io/posts-app/)
+
 # CRUD app which edits user records in React
 
 A simple CRUD application using React and [JSONPlaceholder API](https://jsonplaceholder.typicode.com/) where you can:
