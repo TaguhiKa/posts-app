@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
 
+
+    header {
+      height: 300px;
+    }
 .header {
     display: flex;
     flex-direction: column;
@@ -22,7 +26,6 @@
     font-weight: 600;
     font-family: 'Antic Didone', serif;
 }
-
 .write-post {
     font-style: italic;
     margin-top: 10px;
@@ -31,7 +34,9 @@
     letter-spacing: 1px;
     font-weight: 600;
     font-family: 'Antic Didone', serif;
+    cursor: pointer;
 }
+
 .add-btn {
     color: #780116;
     font-size: 50px;

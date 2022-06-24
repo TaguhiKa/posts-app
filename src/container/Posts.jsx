@@ -31,7 +31,7 @@ const Posts = () => {
       });
   };
   useEffect(() => {
-    if (posts.length === 0) {
+    if (!getIntialPosts().length) {
       fetchData();
     }
   }, []);
@@ -43,7 +43,7 @@ const Posts = () => {
       }),
     ]);
   };
-
+// fix the add
   const addPost = () => {
     const newPost = {
       id: posts.length + 1,
@@ -51,16 +51,15 @@ const Posts = () => {
       title: "",
       body: "",
     };
-    const unshitPost = posts.unshift(newPost)
+    const unshitPost = posts.unshift(newPost);
+    console.log(unshitPost);
     setPosts([...posts, unshitPost]);
   };
 
   const updatePosts = (id, updatedTitle, updatedBody) => {
-   
     setPosts(
       posts.map(post => {
-        console.log(id);
-        console.log(post);
+
         if (post.id === id) {
           post.title = updatedTitle
           post.body = updatedBody
@@ -71,13 +70,17 @@ const Posts = () => {
   }
 
   return (
-    posts && (
+ 
       <div className="header">
         <div className="logo">sincerely, yours</div>
         <div className="signature">Taguhi Karakashyan</div>
         <div className="write-post">Write a new post</div>
-        {posts.map((item) => {
-          return <div key={item.id}>
+        <span className="add-btn" onClick={addPost} role="button">
+          <FontAwesomeIcon icon={faCirclePlus} />
+        </span>
+        <div className="posts-container">
+        {posts && posts.map((item, index) => {
+          return <div key={index}>
             <Card
               onDelete={deletePosts} 
               onEdit={updatePosts}
@@ -87,13 +90,10 @@ const Posts = () => {
             />
             
           </div>;
-        })}
-        <span className="add-btn" onClick={addPost}>
-              <FontAwesomeIcon icon={faCirclePlus} />
-            </span>
+        })});
+        </div>
       </div>
     )
-  );
 };
 
 export default Posts;
