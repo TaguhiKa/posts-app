@@ -1,19 +1,14 @@
 import { useState } from "react";
-import Title from "../Title/Title";
-import Body from "../Body/Body";
-import Button from "../Button/Button";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan, faPencil, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 import "./Card.css";
 
 const Card = ({
-    onDelete = () => {},
-    onEdit = () => {} ,
-    id = 0,
-    title = "",
-    body = "",
-  }) => {
+  onDelete = () => {},
+  onEdit = () => {},
+  id = 0,
+  title = "",
+  body = "",
+}) => {
   const [isEdit, setIsEdit] = useState(false);
 
   const handleEdit = () => {
@@ -34,29 +29,52 @@ const Card = ({
     onEdit(id, title, e.target.value);
   };
 
-
   return (
     <>
-       { isEdit ? (
-            <section className='card'>
-              <input className="card-title" name="title" defaultValue={title} onChange={handleTitleChange}/>
-              <textarea className="card-body" name="card-body" defaultValue={body} onChange={handleBodyChange}/>
-                <span onClick={() => handleOnEditSubmit(id)} id={id} role="button" className="btn"> 
-                  <FontAwesomeIcon icon={faCheck} />
-                </span>
-            </section>
-          ) : (
-            <div className="card" >
-              <Title title={title} />
-              <Body body={body} />
-                <span  onClick={() => onDelete(id)} id={id} className="btn" role="button"> 
-                  <FontAwesomeIcon icon={faTrashCan} />
-                </span>
-                <span onClick={handleEdit} id={id} className="btn" role="button"> 
-                  <FontAwesomeIcon icon={faPencil} />
-                </span>
-            </div>
-          ) }
+      {isEdit ? (
+        <div className="card">
+          <input
+            className="card-title"
+            name="title"
+            defaultValue={title}
+            onChange={handleTitleChange}
+          />
+          <div className="textarea-container">
+            <textarea
+              className="card-body"
+              name="card-body"
+              defaultValue={body}
+              onChange={handleBodyChange}
+            />
+          </div>
+          <span
+            onClick={() => handleOnEditSubmit(id)}
+            id={id}
+            role="button"
+            className="btn"
+          >
+            Save
+          </span>
+        </div>
+      ) : (
+        <div className="card">
+          <span className="card-title">{title}</span>
+          <div className="card-body">{body}</div>
+          <div className="button-container">
+            <span
+              onClick={() => onDelete(id)}
+              id={id}
+              className="btn"
+              role="button"
+            >
+              Delete
+            </span>
+            <span onClick={handleEdit} id={id} className="btn" role="button">
+              Edit
+            </span>
+          </div>
+        </div>
+      )}
     </>
   );
 };

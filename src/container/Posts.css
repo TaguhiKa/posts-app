@@ -2,9 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
 
 
-    header {
-      height: 300px;
-    }
 .header {
     display: flex;
     flex-direction: column;
@@ -21,7 +18,7 @@
 
 .signature{
     color: #caaaac;
-    font-size: 25px;
+    font-size: 15px;
     letter-spacing: 1px;
     font-weight: 600;
     font-family: 'Antic Didone', serif;
@@ -34,11 +31,17 @@
     letter-spacing: 1px;
     font-weight: 600;
     font-family: 'Antic Didone', serif;
-    cursor: pointer;
 }
 
 .add-btn {
-    color: #780116;
-    font-size: 50px;
+    color: #153243;
     cursor: pointer;
+    margin-left: 5px;
 }
+
+.posts-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+

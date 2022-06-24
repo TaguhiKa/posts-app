@@ -1,7 +1,7 @@
 import Card from "../components/Cards/Card";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import "./Posts.css";
 
 const getIntialPosts = () => {
@@ -43,18 +43,17 @@ const Posts = () => {
       }),
     ]);
   };
-// fix the add
-  const addPost = () => {
-    const newPost = {
-      id: posts.length + 1,
-      userId: Math.floor(Math.random() * 10) + 1,
-      title: "",
-      body: "",
-    };
-    const unshitPost = posts.unshift(newPost);
-    console.log(unshitPost);
-    setPosts([...posts, unshitPost]);
+
+const addPost = () => {
+  const newPost = {
+    id: posts.length + 1,
+    userId: Math.floor(Math.random() * 10) + 1,
+    title: "",
+    body: "",
   };
+  const newPosts = [newPost].concat(posts)
+  setPosts(newPosts);
+}
 
   const updatePosts = (id, updatedTitle, updatedBody) => {
     setPosts(
@@ -74,10 +73,11 @@ const Posts = () => {
       <div className="header">
         <div className="logo">sincerely, yours</div>
         <div className="signature">Taguhi Karakashyan</div>
-        <div className="write-post">Write a new post</div>
+        <div className="write-post">Write a new post
         <span className="add-btn" onClick={addPost} role="button">
-          <FontAwesomeIcon icon={faCirclePlus} />
+          <FontAwesomeIcon icon={faEdit} />
         </span>
+        </div>
         <div className="posts-container">
         {posts && posts.map((item, index) => {
           return <div key={index}>
@@ -90,7 +90,7 @@ const Posts = () => {
             />
             
           </div>;
-        })});
+        })}
         </div>
       </div>
     )
