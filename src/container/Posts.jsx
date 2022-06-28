@@ -4,14 +4,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import "./Posts.css";
 
-const getIntialPosts = () => {
+
+const getInitialPosts = () => {
   const storedPosts = localStorage.getItem("posts");
   const savedPosts = JSON.parse(storedPosts);
   return savedPosts || [];
 };
 
 const Posts = () => {
-  const [posts, setPosts] = useState(getIntialPosts());
+  const [posts, setPosts] = useState(getInitialPosts());
   const setLocalStorage = () => {
     const storedPosts = JSON.stringify(posts);
     localStorage.setItem("posts", storedPosts);
@@ -31,7 +32,7 @@ const Posts = () => {
       });
   };
   useEffect(() => {
-    if (!getIntialPosts().length) {
+    if (!getInitialPosts().length) {
       fetchData();
     }
   }, []);

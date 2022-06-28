@@ -11,13 +11,11 @@ const Card = ({
 }) => {
   const [isEdit, setIsEdit] = useState(false);
 
-  const handleEdit = () => {
+  const toggleEdit = () => {
     setIsEdit(!isEdit);
   };
 
-  const handleOnEditSubmit = (e) => {
-    setIsEdit(!isEdit);
-  };
+
 
   const handleTitleChange = (e) => {
     e.preventDefault();
@@ -48,7 +46,7 @@ const Card = ({
             />
           </div>
           <span
-            onClick={() => handleOnEditSubmit(id)}
+            onClick={() => toggleEdit(id)}
             id={id}
             role="button"
             className="btn"
@@ -69,7 +67,7 @@ const Card = ({
             >
               Delete
             </span>
-            <span onClick={handleEdit} id={id} className="btn" role="button">
+            <span onClick={toggleEdit} id={id} className="btn" role="button">
               Edit
             </span>
           </div>
